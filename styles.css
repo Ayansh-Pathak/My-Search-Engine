@@ -1,0 +1,232 @@
+:root {
+            --main-bg-color: #ffffff;
+            --main-text-color: #202124;
+            --link-color: #1a0dab;
+            --card-bg-color: #ffffff;
+            --card-hover-bg: #f8f9fa;
+            --accent-color: #1a73e8;
+            --secondary-text-color: #5f6368;
+            --border-color: #dfe1e5;
+            --footer-bg: #f2f2f2;
+            --font-family: arial, sans-serif;
+            --base-font-size: 14px;
+            --contact-bar-bg: #1a73e8;
+            --contact-bar-text: #ffffff;
+        }
+
+        /* Dark mode colors */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --main-bg-color: #1a1a1a;
+                --main-text-color: #e8eaed;
+                --link-color: #8ab4f8;
+                --card-bg-color: #2d2d2d;
+                --card-hover-bg: #3a3a3a;
+                --accent-color: #8ab4f8;
+                --secondary-text-color: #9aa0a6;
+                --border-color: #3c4043;
+                --footer-bg: #2d2d2d;
+            }
+        }
+
+        /* Global Styles */
+        html {
+            font-size: var(--base-font-size);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: var(--font-family);
+            background: var(--main-bg-color);
+            color: var(--main-text-color);
+        }
+        
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: clamp(4rem, 10vw, 6rem);
+            margin: 0;
+            white-space: normal;
+            text-align: center;
+            font-weight: 400;
+            color: var(--main-text-color);
+            letter-spacing: -0.5px;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 1rem 2rem;
+        }
+
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-top: -2rem;
+        }
+
+        footer {
+            font-size: 13px;
+            padding: 0.75rem 1rem;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            color: var(--secondary-text-color);
+            background: var(--footer-bg);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: var(--secondary-text-color);
+        }
+
+        /* Search Box Styles */
+        #search-section {
+            margin: 0 0 2rem 0;
+        }
+
+        #search-section p {
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--main-text-color);
+        }
+
+        .search-container {
+            position: relative;
+            display: flex;
+            max-width: 584px;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 1px 6px rgba(32,33,36,.28);
+            transition: box-shadow 0.2s;
+            background: var(--card-bg-color);
+        }
+
+        .search-container:hover,
+        .search-container:focus-within {
+            box-shadow: 0 1px 6px rgba(32,33,36,.4);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            opacity: 0.54;
+            pointer-events: none;
+        }
+
+        #search-input {
+            flex: 1;
+            padding: 13px 16px 13px 48px;
+            border: none;
+            font-size: 16px;
+            font-family: var(--font-family);
+            outline: none;
+            color: var(--main-text-color);
+            background: transparent;
+        }
+
+        #search-button {
+            padding: 0 24px;
+            background: #1a73e8;
+            color: #ffffff;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.1s ease;
+            font-weight: 500;
+        }
+
+        #search-button:hover {
+            background: #1765cc;
+            box-shadow: 0 1px 1px rgba(0,0,0,.1);
+        }
+
+        .custom-text {
+            text-align: center;
+            padding: 0.75rem 1rem;
+            color: var(--secondary-text-color);
+        }
+
+        /* Top Banner Styles */
+        #banner {
+            width: 100%;
+            color: var(--contact-bar-text);
+            padding: 10px 0;
+            text-align: center;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        #banner a {
+            color: var(--contact-bar-text);
+            text-decoration: none;
+        }
+
+        #banner a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 3rem 1rem 1.5rem;
+            }
+
+            main {
+                margin-top: -1rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            header {
+                padding: 2rem 1rem 1rem;
+            }
+
+            #search-button {
+                padding: 0 16px;
+            }
+
+            footer {
+                padding: 1rem 0;
+            }
+        }
